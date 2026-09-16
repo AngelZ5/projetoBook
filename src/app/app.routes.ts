@@ -6,7 +6,7 @@ import { CriarLivroComponent } from './paginas/criar-livro/criar-livro.component
 
 export const routes: Routes = [
   {
-    path: 'croar-livro',
+    path: 'criar-livro',
     component: CriarLivroComponent
   },
   {
