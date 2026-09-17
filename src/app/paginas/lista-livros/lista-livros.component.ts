@@ -39,7 +39,9 @@ export class ListaLivrosComponent implements OnInit {
     });
   }
   removerLivro(id: string) {
-    this.livroService.excluirLivro(id).subscribe()
+    this.livroService.excluirLivro(id).subscribe(() => {
+      this.deletarLivroDaLista(id)
+    })
   }
   deletarLivroDaLista(livroId: string){
   this.generosComLivros = this.generosComLivros.map(({genero, livros}) => ({
