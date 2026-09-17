@@ -54,4 +54,8 @@ export class LivroService {
   atualizarFavorito(livro:Livro): Observable<Livro> {
     return this.httpCliente.patch<Livro>(`${this.API_URL}/${livro.id}`, {favorito:livro.favorito})
   }
+
+  excluirLivro(id: string): Observable<void> {
+    return this.httpCliente.delete<void>(`${this.API_URL}/${id}`);
+  }
 }
