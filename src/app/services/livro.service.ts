@@ -45,6 +45,10 @@ export class LivroService {
     );
   }
 
+  obterLivroPorId(id: string): Observable<Livro> {
+    return this.httpCliente.get<Livro>(`${this.API_URL}/${id}`);
+  }
+
 
   adicionarLivro(novoLivro: Livro): Observable<Livro>{
     return this.httpCliente.post<Livro>(this.API_URL, novoLivro)
@@ -57,5 +61,9 @@ export class LivroService {
 
   excluirLivro(id: string): Observable<void> {
     return this.httpCliente.delete<void>(`${this.API_URL}/${id}`);
+  }
+
+   editarLivro(livro:Livro): Observable<Livro> {
+    return this.httpCliente.put<Livro>(`${this.API_URL}/${livro.id}`, livro)
   }
 }
